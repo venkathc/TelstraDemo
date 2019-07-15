@@ -4,11 +4,28 @@
  <listeners>
   <listener class-name="com.telstra.listners.TestListeners"/> 
 </listeners>
+
+<test thread-count="1" name="Firefox Test">
+    <classes>
+       <class name="com.telstra.testcases.FlipkartHomePageTests"/>
+      <parameter name="browser" value="Firefox"></parameter>
+       </classes>
+  </test> 
   
-  <test name="Demo Test">
+  <test thread-count="1" name="Chrome Test">
  
     <classes>
       <class name="com.telstra.testcases.FlipkartHomePageTests"/>
+      <parameter name="browser" value="Chrome"></parameter>
     </classes>
   </test> 
+  
+  <test thread-count="1" name="IE Test">
+ 
+    <classes>
+      <class name="com.telstra.testcases.FlipkartHomePageTests"/>
+      <parameter name="browser" value="IE"></parameter>
+    </classes>
+  </test> 
+  
 </suite>
