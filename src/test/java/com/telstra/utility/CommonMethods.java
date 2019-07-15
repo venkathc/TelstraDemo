@@ -26,7 +26,7 @@ import com.telstra.setup.BaseTestPage;
 
 public class CommonMethods extends BaseTestPage {
 
-	public static Actions action;
+
 	public static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 	
 	public void clickUsingJavaScript(WebDriver driver, WebElement locator) throws Exception {
@@ -75,7 +75,8 @@ public class CommonMethods extends BaseTestPage {
 
 	
 	public void moveToElement(WebDriver driver, WebElement locator) {
-		action.moveToElement(locator).click().perform();
+		Actions action = new Actions(driver);
+		action.moveToElement(locator).perform();
 
 	}
 

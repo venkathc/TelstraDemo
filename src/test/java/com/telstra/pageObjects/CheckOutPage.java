@@ -28,11 +28,13 @@ public class CheckOutPage extends BasePage{
 	@FindBy(xpath="//a[text()='Sony CyberShot DSC-W800/SC IN5']")
 	public WebElement textSonyCyberShotDSC;
 	
-	@FindBy(linkText = "Explore")
+	@FindBy(xpath = "//a[@href='/plus']")
 	public WebElement linkFlipKart;
 	
 	@FindBy(xpath = "//h3/span[text()='Payment Options']")
 	public WebElement headerPaymentOptions;
 	
+	@FindBy(xpath = "//div[text()='Logout']")
+	public WebElement linkLogout;
 	
 }

@@ -21,7 +21,6 @@ public class Synchronization {
 	
 	private static final long DEFAULT_TIMEOUT = 60;
 
-	
 	//Method to wait page until element visible
 	public  void waitElementForVisible(WebDriver driver, WebElement locator) {
 		try {
@@ -63,7 +62,7 @@ public class Synchronization {
 
 	}
 
-	public static void waitElement(WebDriver driver, WebElement locator) {
+	public void waitElement(WebDriver driver, WebElement locator) {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		try {
 			wait.until(ExpectedConditions.visibilityOf(locator));

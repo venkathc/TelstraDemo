@@ -29,11 +29,11 @@ public class FlipkartHomePageTests extends BaseTestPage{
 		TelstraVerification telstraVerification = new TelstraVerification(driver);
 		String actURL = driver.getCurrentUrl();
 		telstraVerification.verifyString(actURL, flipkartHomePage.expURL);
-		Thread.sleep(4000);
+
 		synchronization.waitElement(driver, flipkartHomePage.textBoxSearchForProducts);
 		flipkartHomePage.textBoxSearchForProducts.sendKeys(readDataExcel.readExcel("Products", "Cam"));
 		flipkartHomePage.textBoxSearchForProducts.sendKeys(Keys.RETURN);
-		Thread.sleep(4000);
+		
 		CommonMethods commonMethods = new CommonMethods();
 		commonMethods.scrollToWebElement(driver, flipkartHomePage.selectCamera("Sony CyberShot DSC-W800/SC IN5"));
 		commonMethods.clickUsingJavaScript(driver,flipkartHomePage.selectCamera("Sony CyberShot DSC-W800/SC IN5"));
@@ -51,8 +51,12 @@ public class FlipkartHomePageTests extends BaseTestPage{
 		//checkOutPage.inputTextEmail.sendKeys("venkateshkumarhc@gmail.com");
 		checkOutPage.buttonCONTINUE.click();
 		telstraVerification.verifyText(checkOutPage.headerPaymentOptions, checkOutPage.expPaymentOptions);
+		
+		synchronization.waitElement(driver, checkOutPage.linkFlipKart);
 		checkOutPage.linkFlipKart.click();
+		synchronization.waitElement(driver, flipkartHomePage.dropDownVenkatesh);
 		commonMethods.moveToElement(driver, flipkartHomePage.dropDownVenkatesh);
+		checkOutPage.linkLogout.click();
 		
 	}
 
