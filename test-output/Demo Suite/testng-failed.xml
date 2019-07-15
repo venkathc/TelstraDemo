@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Demo Suite]">
+  <listeners>
+    <listener class-name="com.telstra.listners.TestListeners"/>
+  </listeners>
+  <test name="Demo Test(failed)">
+    <classes>
+      <class name="com.telstra.testcases.FlipkartHomePageTests">
+        <methods>
+          <include name="openBrowser"/>
+          <include name="tc_buyCamera"/>
+          <include name="tear"/>
+        </methods>
+      </class> <!-- com.telstra.testcases.FlipkartHomePageTests -->
+    </classes>
+  </test> <!-- Demo Test(failed) -->
+</suite> <!-- Failed suite [Demo Suite] -->

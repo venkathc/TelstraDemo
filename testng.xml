@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Demo Suite">
+ <listeners>
+  <listener class-name="com.telstra.listners.TestListeners"/> 
+</listeners>
+  
+  <test name="Demo Test">
+ 
+    <classes>
+      <class name="com.telstra.testcases.FlipkartHomePageTests"/>
+    </classes>
+  </test> 
+</suite>
