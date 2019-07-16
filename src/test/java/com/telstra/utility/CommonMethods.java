@@ -3,32 +3,21 @@ package com.telstra.utility;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Reporter;
 
 import com.telstra.setup.BaseTestPage;
 
-
 public class CommonMethods extends BaseTestPage {
 
-
 	public static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-	
+
 	public void clickUsingJavaScript(WebDriver driver, WebElement locator) throws Exception {
 		try {
 			if (locator.isEnabled() && locator.isDisplayed()) {
@@ -38,7 +27,7 @@ public class CommonMethods extends BaseTestPage {
 			} else {
 				System.out.println("Unable to click on element");
 				driver.quit();
-				
+
 			}
 		} catch (StaleElementReferenceException e) {
 			System.out.println("Element is not attached to the page document " + e.getStackTrace());
@@ -50,36 +39,33 @@ public class CommonMethods extends BaseTestPage {
 		}
 	}
 
-	//Scroll down to bottom of the page
+	// Scroll down to bottom of the page
 	public void scrollToBottomOfPage(WebDriver driver, String url) {
 		try {
 			driver.navigate().to(url);
 			((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		} catch (Exception e) {
-			
+
 			e.printStackTrace();
 		}
 	}
 
-// Scroll to top of the page
+	// Scroll to top of the page
 	public void scrollToTopOfPage(WebDriver driver, String url) {
 		try {
 			driver.navigate().to(url);
 			((JavascriptExecutor) driver).executeScript("window.scrollBy(0, -250)", "");
 		} catch (Exception e) {
-			
+
 			e.printStackTrace();
 		}
 	}
 
-
-	
 	public void moveToElement(WebDriver driver, WebElement locator) {
 		Actions action = new Actions(driver);
 		action.moveToElement(locator).perform();
 
 	}
-
 
 	public void scrollToWebElement(WebDriver driver, WebElement locator) {
 		try {
@@ -91,7 +77,6 @@ public class CommonMethods extends BaseTestPage {
 		}
 
 	}
-	
 
 	public void selectFromDropDownByVisibleText(WebElement element, String elementToSelect) {
 		try {
@@ -113,6 +98,5 @@ public class CommonMethods extends BaseTestPage {
 
 		}
 	}
-
 
 }
