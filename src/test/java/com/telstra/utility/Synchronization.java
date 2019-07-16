@@ -25,7 +25,7 @@ public class Synchronization {
 	public  void waitElementForVisible(WebDriver driver, WebElement locator) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 60);
-			wait.until(ExpectedConditions.elementToBeClickable(locator));
+			wait.until(ExpectedConditions.visibilityOf(locator));
 			Reporter.log(locator.toString() + ": Loaded successfully");
 			
 		}catch (Exception  e) {
@@ -62,29 +62,6 @@ public class Synchronization {
 
 	}
 
-	public void waitElement(WebDriver driver, WebElement locator) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		try {
-			wait.until(ExpectedConditions.visibilityOf(locator));
 
-		} catch (Exception  e) {
-
-			System.out.println(locator.toString() + "Element not found");
-		}
-
-	}
-	
-	//Method to wait until element visible
-	public  void waitIsElementVisible(WebDriver driver, By locator) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		try {
-			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-		} catch (Exception  e) {
-
-		}
-
-	}
-
-	
 	
 }

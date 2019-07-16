@@ -14,7 +14,7 @@ public class CheckOutPage extends BasePage{
 	}
 
 	public String expSonyCyberShotDSC = "Sony CyberShot DSC-W800/SC IN5";
-	public String expPaymentOptions = "Payment Options";
+	public String expPaymentOptions = "PAYMENT OPTIONS";
 	
 	@FindBy(xpath="//input[@type='email']")
 	public WebElement inputTextEmail;

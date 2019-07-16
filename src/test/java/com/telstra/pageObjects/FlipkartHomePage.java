@@ -10,52 +10,43 @@ import com.telstra.setup.BasePage;
 public class FlipkartHomePage extends BasePage {
 
 	private WebDriver driver;
-	
+
 	public FlipkartHomePage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 	}
 
 	public String expURL = "https://www.flipkart.com/";
-	
 
-	@FindBy(name="q")
+	@FindBy(name = "q")
 	public WebElement textBoxSearchForProducts;
-	
-	@FindBy(className="_2zrpKA")
+
+	@FindBy(xpath = "//div[label[span[text()='Enter Email/Mobile number']]]//input")
 	public WebElement textBoxEnterEmailMobileNumber;
 
-	@FindBy(xpath="//input[@type='password']")
+	@FindBy(xpath = "//input[@type='password']")
 	public WebElement textBoxEnterPassword;
 
-	@FindBy(xpath="//button/span[text()='Login']")
+	@FindBy(xpath = "//button/span[text()='Login']")
 	public WebElement buttonLogin;
 
-	@FindBy(xpath="//button[@class='_2AkmmA _29YdH8']")
-	public WebElement buttonClose;
-
-	@FindBy(xpath="//button[text()='ADD TO CART']")
+	@FindBy(xpath = "//button[text()='ADD TO CART']")
 	public WebElement buttonAddToCart;
-	
-	@FindBy(xpath="//button/span[text()='Place Order']")
+
+	@FindBy(xpath = "//button/span[text()='Place Order']")
 	public WebElement buttonPlaceOrder;
 
-	@FindBy(xpath="//div[@class='_2aUbKa' and text()='Venkatesh']")
+	@FindBy(xpath = "//div[@class='_2aUbKa' and text()='Venkatesh']")
 	public WebElement dropDownVenkatesh;
-	
-	
-	
+
 	// Method to select common name elements
-		public WebElement selectCamera(String camName) {
-			////div[@data-id='CAMDVGUGJ4G5FVDM']/div[@class='_1UoZlX']//div[contains(text(),'Sony CyberShot DSC-W800/SC IN5')]
-			return driver.findElement(By.xpath("//div[@data-id='CAMDVGUGJ4G5FVDM']/div[@class='_1UoZlX']//div[contains(text(),'" + camName + "')]"));
-		}
-		
-		
-	public void selectCheckbox(String skillName) {
-		driver.findElement(By.xpath("//span[contains(text(),'" + skillName + "')]/..//i[@class='icon icon-checkbox']"))
-				.click();
+	public WebElement selectCamera(String camName) {
+		return driver.findElement(By.xpath(
+				"//div[@data-id='CAMDVGUGJ4G5FVDM']/div[@class='_1UoZlX']//div[contains(text(),'" + camName + "')]"));
 	}
 
-	
+	public WebElement getUsername(String user) {
+		return driver.findElement(By.xpath("//div[@class='_2aUbKa' and text()='" + user + "']"));
+
+	}
 }

@@ -1,12 +1,8 @@
 package com.telstra.testcases;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Set;
-
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
-
 import com.telstra.pageObjects.CheckOutPage;
 import com.telstra.pageObjects.FlipkartHomePage;
 import com.telstra.setup.BaseTestPage;
@@ -15,9 +11,9 @@ import com.telstra.utility.ReadDataExcel;
 import com.telstra.utility.Synchronization;
 import com.telstra.utility.TelstraVerification;
 
-public class FlipkartHomePageTests extends BaseTestPage{
-	
-	@Test(description = "Checkout camera")
+public class FlipkartHomePageTests extends BaseTestPage {
+
+	@Test(description = "Select camera add to cart navigate to payment options then logout")
 	public void tc_buyCamera() throws Exception {
 		ReadDataExcel readDataExcel = new ReadDataExcel();
 		FlipkartHomePage flipkartHomePage = new FlipkartHomePage(driver);
@@ -26,38 +22,43 @@ public class FlipkartHomePageTests extends BaseTestPage{
 		flipkartHomePage.textBoxEnterPassword.sendKeys(readDataExcel.readExcel("Products", "password"));
 		flipkartHomePage.buttonLogin.click();
 		synchronization.waitForPageToBeReady(driver);
+		synchronization.waitElementForVisible(driver,
+				flipkartHomePage.getUsername(readDataExcel.readExcel("Products", "Name")));
 		TelstraVerification telstraVerification = new TelstraVerification(driver);
 		String actURL = driver.getCurrentUrl();
 		telstraVerification.verifyString(actURL, flipkartHomePage.expURL);
 
-		synchronization.waitElement(driver, flipkartHomePage.textBoxSearchForProducts);
+		synchronization.waitElementForVisible(driver, flipkartHomePage.textBoxSearchForProducts);
 		flipkartHomePage.textBoxSearchForProducts.sendKeys(readDataExcel.readExcel("Products", "Cam"));
 		flipkartHomePage.textBoxSearchForProducts.sendKeys(Keys.RETURN);
-		
+		synchronization.waitForPageToBeReady(driver);
 		CommonMethods commonMethods = new CommonMethods();
-		commonMethods.scrollToWebElement(driver, flipkartHomePage.selectCamera("Sony CyberShot DSC-W800/SC IN5"));
-		commonMethods.clickUsingJavaScript(driver,flipkartHomePage.selectCamera("Sony CyberShot DSC-W800/SC IN5"));
+		commonMethods.scrollToWebElement(driver,
+				flipkartHomePage.selectCamera(readDataExcel.readExcel("Products", "CameraModel")));
+		commonMethods.clickUsingJavaScript(driver,
+				flipkartHomePage.selectCamera(readDataExcel.readExcel("Products", "CameraModel")));
 		String parentTab = driver.getWindowHandle();
 		ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
-	    newTab.remove(parentTab);
-	    // change focus to new tab
-	    driver.switchTo().window(newTab.get(0));
+		newTab.remove(parentTab);
+		// change focus to new tab
+		driver.switchTo().window(newTab.get(0));
 		flipkartHomePage.buttonAddToCart.click();
 		synchronization.waitElementForVisible(driver, flipkartHomePage.buttonPlaceOrder);
 		CheckOutPage checkOutPage = new CheckOutPage(driver);
 		telstraVerification.verifyText(checkOutPage.textSonyCyberShotDSC, checkOutPage.expSonyCyberShotDSC);
 		flipkartHomePage.buttonPlaceOrder.click();
-		
-		//checkOutPage.inputTextEmail.sendKeys("venkateshkumarhc@gmail.com");
+		synchronization.waitElementForVisible(driver, checkOutPage.buttonCONTINUE);
 		checkOutPage.buttonCONTINUE.click();
+		synchronization.waitElementForVisible(driver, checkOutPage.headerPaymentOptions);
 		telstraVerification.verifyText(checkOutPage.headerPaymentOptions, checkOutPage.expPaymentOptions);
-		
-		synchronization.waitElement(driver, checkOutPage.linkFlipKart);
+
+		synchronization.waitElementForVisible(driver, checkOutPage.linkFlipKart);
 		checkOutPage.linkFlipKart.click();
-		synchronization.waitElement(driver, flipkartHomePage.dropDownVenkatesh);
-		commonMethods.moveToElement(driver, flipkartHomePage.dropDownVenkatesh);
+		synchronization.waitElementForVisible(driver,
+				flipkartHomePage.getUsername(readDataExcel.readExcel("Products", "Name")));
+		commonMethods.moveToElement(driver, flipkartHomePage.getUsername(readDataExcel.readExcel("Products", "Name")));
 		checkOutPage.linkLogout.click();
-		
+
 	}
 
 }

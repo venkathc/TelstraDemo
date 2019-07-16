@@ -91,6 +91,8 @@ public class CommonMethods extends BaseTestPage {
 		}
 
 	}
+	
+
 	public void selectFromDropDownByVisibleText(WebElement element, String elementToSelect) {
 		try {
 			Select select = new Select(element);
@@ -112,14 +114,5 @@ public class CommonMethods extends BaseTestPage {
 		}
 	}
 
-	public void selectFromDropDownByIndex(WebElement element, int indexVal) {
-		try {
-			Select select = new Select(element);
-			select.selectByIndex(indexVal);
-
-		} catch (NoSuchElementException e) {
-			System.out.println("Option value not find in dropdown");
-		}
-	}
 
 }

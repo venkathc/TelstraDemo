@@ -42,17 +42,20 @@ public class TelstraVerification extends BasePage {
 
 		try {
 			if (actualText.equals(expectedText)) {
+				softAssert.assertTrue(true);
 				Reporter.log("Passed : Actual Text:= [" + actualText + "] Expected Text:= [" + expectedText + "]");
 				
 			} else {
 				Reporter.log("Failed : Actual Text:= [" + actualText + "] Expected Text:= [" + expectedText + "]");
-				softAssert.assertAll();
+				softAssert.assertTrue(false);
+				
 				throw new Exception("Expected string not matched" + actualText);
 			}
 		} catch (Exception error) {
 			error.printStackTrace();
 			Reporter.log(error.getMessage());
 		}
+		softAssert.assertAll();
 	}
 	
 	

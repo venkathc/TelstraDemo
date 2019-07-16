@@ -81,7 +81,7 @@ public class BaseTestPage extends ReadFileData {
 	@AfterMethod
 	public void tear() {
 
-		// driver.quit();
+		 driver.quit();
 
 	}
 
