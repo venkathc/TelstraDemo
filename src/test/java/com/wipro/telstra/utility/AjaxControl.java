@@ -43,7 +43,6 @@ public class AjaxControl {
   //Method to wait page until element visible
   	public  void waitElementForVisible(WebDriver driver, WebElement locator) {
   		try {
-  			WebDriverWait wait = new WebDriverWait(driver, 100);
   			wait.until(ExpectedConditions.visibilityOf(locator));
   			Reporter.log(locator.toString() + ": Loaded successfully");
   			
@@ -55,7 +54,7 @@ public class AjaxControl {
 
   //Method to wait until page loads
   	public  boolean waitForPageToBeReady(WebDriver driver) {
-  		WebDriverWait wait = new WebDriverWait(driver, 100);
+  		
   		ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
   			public Boolean apply(WebDriver driver) {
   				try {
