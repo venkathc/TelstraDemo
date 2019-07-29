@@ -27,12 +27,8 @@ import com.wipro.telstra.setup.BaseSetupPage;
 
 public class CommonUtilities extends BaseSetupPage {
 
-	Properties prop = new Properties();
-	InputStream input = null;
-	public String testUrl;
-
 	public static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-	
+	// Method to read data from excel sheet
 	public String readExcel(String sheetName, String variable) throws IOException{
 		DataFormatter formatter = new DataFormatter();
 	  	String filePath = System.getProperty("user.dir");
@@ -68,7 +64,7 @@ public class CommonUtilities extends BaseSetupPage {
 
 	}
 
-
+// Method to click element using java script
 	public void clickUsingJavaScript(WebDriver driver, WebElement locator) throws Exception {
 		try {
 			if (locator.isEnabled() && locator.isDisplayed()) {
@@ -111,13 +107,13 @@ public class CommonUtilities extends BaseSetupPage {
 			e.printStackTrace();
 		}
 	}
-
+// Method to move element
 	public void moveToElement(WebDriver driver, WebElement locator) {
 		Actions action = new Actions(driver);
 		action.moveToElement(locator).perform();
 
 	}
-
+//Method to move cursor to visible element
 	public void scrollToWebElement(WebDriver driver, WebElement locator) {
 		try {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -128,7 +124,7 @@ public class CommonUtilities extends BaseSetupPage {
 		}
 
 	}
-
+// Method to select element from Dropdown box by visible text
 	public void selectFromDropDownByVisibleText(WebElement element, String elementToSelect) {
 		try {
 			Select select = new Select(element);
@@ -140,6 +136,7 @@ public class CommonUtilities extends BaseSetupPage {
 		}
 	}
 
+	// Method to select element from Dropdown box by visible value
 	public void selectFromDropDownByValue(WebElement element, String elementToSelect) {
 		try {
 			Select select = new Select(element);
