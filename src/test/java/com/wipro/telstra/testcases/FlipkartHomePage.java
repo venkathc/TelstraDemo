@@ -1,19 +1,20 @@
-package com.telstra.pageObjects;
+package com.wipro.telstra.testcases;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-import com.telstra.setup.BasePage;
+import com.wipro.telstra.setup.IntiatePage;
 
-public class FlipkartHomePage extends BasePage {
-
-	private WebDriver driver;
+public class FlipkartHomePage extends IntiatePage {
+private WebDriver driver;
 
 	public FlipkartHomePage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 
 	public String expURL = "https://www.flipkart.com/";

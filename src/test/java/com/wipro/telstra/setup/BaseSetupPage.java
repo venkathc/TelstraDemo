@@ -1,4 +1,4 @@
-package com.telstra.setup;
+package com.wipro.telstra.setup;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,9 +16,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
-import com.telstra.utility.ReadFileData;
+import com.wipro.telstra.utility.ReadFileData;
 
-public class BaseTestPage extends ReadFileData {
+public class BaseSetupPage extends ReadFileData {
 
 	public RemoteWebDriver driver;
 	public WebDriverWait wait;
@@ -83,8 +83,5 @@ public class BaseTestPage extends ReadFileData {
 
 	}
 
-	public WebDriver getDriver() {
-		return driver;
-	}
-
+	
 }

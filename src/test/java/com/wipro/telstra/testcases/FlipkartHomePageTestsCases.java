@@ -1,42 +1,41 @@
-package com.telstra.testcases;
+package com.wipro.telstra.testcases;
 
 import java.util.ArrayList;
+
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
-import com.telstra.pageObjects.CheckOutPage;
-import com.telstra.pageObjects.FlipkartHomePage;
-import com.telstra.setup.BaseTestPage;
-import com.telstra.utility.CommonMethods;
-import com.telstra.utility.ReadDataExcel;
-import com.telstra.utility.Synchronization;
-import com.telstra.utility.TelstraVerification;
 
-public class FlipkartHomePageTests extends BaseTestPage {
+import com.wipro.telstra.setup.BaseSetupPage;
+import com.wipro.telstra.utility.AjaxControl;
+import com.wipro.telstra.utility.CommonUtilities;
+import com.wipro.telstra.utility.TelstraReporting;
+
+public class FlipkartHomePageTestsCases extends BaseSetupPage {
 
 	@Test(description = "Select camera add to cart navigate to payment options then logout")
 	public void tc_buyCamera() throws Exception {
-		ReadDataExcel readDataExcel = new ReadDataExcel();
+		CommonUtilities commonUtilities = new CommonUtilities();
 		FlipkartHomePage flipkartHomePage = new FlipkartHomePage(driver);
-		Synchronization synchronization = new Synchronization();
-		flipkartHomePage.textBoxEnterEmailMobileNumber.sendKeys(readDataExcel.readExcel("Products", "userName"));
-		flipkartHomePage.textBoxEnterPassword.sendKeys(readDataExcel.readExcel("Products", "password"));
+		AjaxControl synchronization = new AjaxControl();
+		flipkartHomePage.textBoxEnterEmailMobileNumber.sendKeys(commonUtilities.readExcel("Products", "userName"));
+		flipkartHomePage.textBoxEnterPassword.sendKeys(commonUtilities.readExcel("Products", "password"));
 		flipkartHomePage.buttonLogin.click();
 		synchronization.waitForPageToBeReady(driver);
 		synchronization.waitElementForVisible(driver,
-				flipkartHomePage.getUsername(readDataExcel.readExcel("Products", "Name")));
-		TelstraVerification telstraVerification = new TelstraVerification(driver);
+				flipkartHomePage.getUsername(commonUtilities.readExcel("Products", "Name")));
+		TelstraReporting telstraVerification = new TelstraReporting(driver);
 		String actURL = driver.getCurrentUrl();
 		telstraVerification.verifyString(actURL, flipkartHomePage.expURL);
 
 		synchronization.waitElementForVisible(driver, flipkartHomePage.textBoxSearchForProducts);
-		flipkartHomePage.textBoxSearchForProducts.sendKeys(readDataExcel.readExcel("Products", "Cam"));
+		flipkartHomePage.textBoxSearchForProducts.sendKeys(commonUtilities.readExcel("Products", "Cam"));
 		flipkartHomePage.textBoxSearchForProducts.sendKeys(Keys.RETURN);
 		synchronization.waitForPageToBeReady(driver);
-		CommonMethods commonMethods = new CommonMethods();
+		CommonUtilities commonMethods = new CommonUtilities();
 		commonMethods.scrollToWebElement(driver,
-				flipkartHomePage.selectCamera(readDataExcel.readExcel("Products", "CameraModel")));
+				flipkartHomePage.selectCamera(commonUtilities.readExcel("Products", "CameraModel")));
 		commonMethods.clickUsingJavaScript(driver,
-				flipkartHomePage.selectCamera(readDataExcel.readExcel("Products", "CameraModel")));
+				flipkartHomePage.selectCamera(commonUtilities.readExcel("Products", "CameraModel")));
 		String parentTab = driver.getWindowHandle();
 		ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
 		newTab.remove(parentTab);
@@ -55,8 +54,8 @@ public class FlipkartHomePageTests extends BaseTestPage {
 		synchronization.waitElementForVisible(driver, checkOutPage.linkFlipKart);
 		checkOutPage.linkFlipKart.click();
 		synchronization.waitElementForVisible(driver,
-				flipkartHomePage.getUsername(readDataExcel.readExcel("Products", "Name")));
-		commonMethods.moveToElement(driver, flipkartHomePage.getUsername(readDataExcel.readExcel("Products", "Name")));
+				flipkartHomePage.getUsername(commonUtilities.readExcel("Products", "Name")));
+		commonMethods.moveToElement(driver, flipkartHomePage.getUsername(commonUtilities.readExcel("Products", "Name")));
 		checkOutPage.linkLogout.click();
 
 	}

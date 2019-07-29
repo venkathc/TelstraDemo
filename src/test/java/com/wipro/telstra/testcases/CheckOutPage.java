@@ -1,16 +1,19 @@
-package com.telstra.pageObjects;
+package com.wipro.telstra.testcases;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-import com.telstra.setup.BasePage;
+import com.wipro.telstra.setup.IntiatePage;
 
-public class CheckOutPage extends BasePage{
+public class CheckOutPage extends IntiatePage{
 
+	private WebDriver driver;
 	public CheckOutPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 
 	public String expSonyCyberShotDSC = "Sony CyberShot DSC-W800/SC IN5";

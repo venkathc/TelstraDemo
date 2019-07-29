@@ -1,4 +1,4 @@
-package com.telstra.utility;
+package com.wipro.telstra.utility;
 
 import java.io.FileInputStream;
 import java.io.IOException;

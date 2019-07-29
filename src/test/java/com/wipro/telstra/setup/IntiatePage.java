@@ -1,11 +1,11 @@
-package com.telstra.setup;
+package com.wipro.telstra.setup;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class BasePage {
+public class IntiatePage {
 
-	public BasePage(WebDriver driver) {
+	public IntiatePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 }

@@ -1,4 +1,4 @@
-package com.telstra.utility;
+package com.wipro.telstra.utility;
 
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
@@ -17,14 +17,14 @@ import org.testng.Assert;
 import org.testng.Reporter;
 
 
-public class Synchronization {
+public class AjaxControl {
 	
-	private static final long DEFAULT_TIMEOUT = 60;
+	private static final long DEFAULT_TIMEOUT = 100;
 
 	//Method to wait page until element visible
 	public  void waitElementForVisible(WebDriver driver, WebElement locator) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 60);
+			WebDriverWait wait = new WebDriverWait(driver, 100);
 			wait.until(ExpectedConditions.visibilityOf(locator));
 			Reporter.log(locator.toString() + ": Loaded successfully");
 			
@@ -53,7 +53,7 @@ public class Synchronization {
 	
 	//Method to wait until element clickable
 	public  void waitisElementClickable(WebDriver driver, WebElement locator) {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebDriverWait wait = new WebDriverWait(driver, 100);
 		try {
 			wait.until(ExpectedConditions.elementToBeClickable(locator));
 		} catch (Exception e) {

@@ -1,4 +1,4 @@
-package com.telstra.listners;
+package com.wipro.telstra.listners;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.telstra.setup.BaseTestPage;
+import com.wipro.telstra.setup.BaseSetupPage;
 
 
 
@@ -44,8 +44,8 @@ public class TestListeners implements ITestListener{
 	}
 
 	public void takeScreenShot(String methodName) {
-		BaseTestPage base = new BaseTestPage();
-		driver=base.getDriver();
+		BaseSetupPage base = new BaseSetupPage();
+	//	driver=base.getDriver();
 		String fileName = new Date().getTime() + ".png";
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		try {

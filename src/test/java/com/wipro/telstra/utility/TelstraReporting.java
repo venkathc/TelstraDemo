@@ -1,4 +1,4 @@
-package com.telstra.utility;
+package com.wipro.telstra.utility;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -7,11 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
-import com.telstra.setup.BasePage;
+import com.wipro.telstra.setup.IntiatePage;
 
-public class TelstraVerification extends BasePage {
+public class TelstraReporting extends IntiatePage {
 
-	public TelstraVerification(WebDriver driver) {
+	public TelstraReporting(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}

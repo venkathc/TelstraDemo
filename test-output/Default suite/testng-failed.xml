@@ -6,8 +6,8 @@
       <class name="com.telstra.testcases.FlipkartHomePageTests">
         <methods>
           <include name="openBrowser"/>
-          <include name="tc_buyCamera"/>
           <include name="tear"/>
+          <include name="tc_buyCamera"/>
         </methods>
       </class> <!-- com.telstra.testcases.FlipkartHomePageTests -->
     </classes>
