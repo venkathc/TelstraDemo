@@ -5,9 +5,9 @@
     <classes>
       <class name="com.wipro.telstra.testcases.FlipkartHomePageTestsCases">
         <methods>
+          <include name="tc_loginFlipkart"/>
           <include name="tear"/>
           <include name="openBrowser"/>
-          <include name="tc_buyCamera"/>
         </methods>
       </class> <!-- com.wipro.telstra.testcases.FlipkartHomePageTestsCases -->
     </classes>

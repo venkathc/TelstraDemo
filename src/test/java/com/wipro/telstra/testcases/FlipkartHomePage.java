@@ -27,16 +27,26 @@ private WebDriver driver;
 
 	@FindBy(xpath = "//button/span[text()='Login']")
 	public WebElement buttonLogin;
-
+	
 	@FindBy(xpath = "//button[text()='ADD TO CART']")
 	public WebElement buttonAddToCart;
 
 	@FindBy(xpath = "//button/span[text()='Place Order']")
 	public WebElement buttonPlaceOrder;
 
-	@FindBy(xpath = "//div[@class='_2aUbKa' and text()='Venkatesh']")
-	public WebElement dropDownVenkatesh;
+	@FindBy(xpath = "//span[text()='Electronics']")
+	public WebElement textLinkElectronics;
 
+	public void clickOnLogin(){
+		buttonLogin.click();
+	   }
+
+	 //Get the title of Login Home Page URL
+	public String getLoginURL(){
+		return driver.getCurrentUrl();
+
+    }
+    
 	// Method to select common name elements
 	public WebElement selectCamera(String camName) {
 		return driver.findElement(By.xpath(
@@ -47,4 +57,9 @@ private WebDriver driver;
 		return driver.findElement(By.xpath("//div[@class='_2aUbKa' and text()='" + user + "']"));
 
 	}
+	
+	//We will use this boolean for assertion. To check if page is opened
+	   public boolean isPageOpened(){
+	       return textLinkElectronics.getText().toString().contains("Electronics");
+	   }	
 }

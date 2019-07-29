@@ -1,8 +1,10 @@
 package com.wipro.telstra.testcases;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.openqa.selenium.Keys;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.wipro.telstra.driver.DriverSetupPage;
@@ -10,24 +12,32 @@ import com.wipro.telstra.utility.AjaxControl;
 import com.wipro.telstra.utility.CommonUtilities;
 import com.wipro.telstra.utility.TelstraReporting;
 
+
 public class FlipkartHomePageTestsCases extends DriverSetupPage {
+	
+	@Test(description = "Verify user successfully logged in")
+	public void tc_loginFlipkart() throws IOException, InterruptedException {
+		CommonUtilities commonUtilities = new CommonUtilities();
+		FlipkartHomePage flipkartHomePage = new FlipkartHomePage(driver);
+		commonUtilities.login(driver);
+		//Check if page is opened
+		Assert.assertTrue(flipkartHomePage.isPageOpened());
+		TelstraReporting telstraVerification = new TelstraReporting(driver);
+		telstraVerification.verifyString(flipkartHomePage.getLoginURL(), flipkartHomePage.expURL);
+		
+	}
 
 	@Test(description = "Select camera add to cart navigate to payment options then logout")
 	public void tc_buyCamera() throws Exception {
 		CommonUtilities commonUtilities = new CommonUtilities();
 		FlipkartHomePage flipkartHomePage = new FlipkartHomePage(driver);
-		AjaxControl synchronization = new AjaxControl();
-		flipkartHomePage.textBoxEnterEmailMobileNumber.sendKeys(commonUtilities.readExcel("Products", "userName"));
-		flipkartHomePage.textBoxEnterPassword.sendKeys(commonUtilities.readExcel("Products", "password"));
-		flipkartHomePage.buttonLogin.click();
-		synchronization.waitForPageToBeReady(driver);
-		synchronization.waitElementForVisible(driver,
-				flipkartHomePage.getUsername(commonUtilities.readExcel("Products", "Name")));
+		AjaxControl synchronization = new AjaxControl(driver);
+		commonUtilities.login(driver);
+		//Check if page is opened
+	    Assert.assertTrue(flipkartHomePage.isPageOpened());
 		TelstraReporting telstraVerification = new TelstraReporting(driver);
-		String actURL = driver.getCurrentUrl();
-		telstraVerification.verifyString(actURL, flipkartHomePage.expURL);
-
 		synchronization.waitElementForVisible(driver, flipkartHomePage.textBoxSearchForProducts);
+		//Pass the parameter to search from excel file
 		flipkartHomePage.textBoxSearchForProducts.sendKeys(commonUtilities.readExcel("Products", "Cam"));
 		flipkartHomePage.textBoxSearchForProducts.sendKeys(Keys.RETURN);
 		synchronization.waitForPageToBeReady(driver);

@@ -24,10 +24,25 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.wipro.telstra.driver.DriverSetupPage;
+import com.wipro.telstra.testcases.FlipkartHomePage;
 
 public class CommonUtilities extends DriverSetupPage {
 
 	public static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+	
+	public void login(WebDriver driver) throws IOException, InterruptedException {
+		
+		CommonUtilities commonUtilities = new CommonUtilities();
+		FlipkartHomePage flipkartHomePage = new FlipkartHomePage(driver);
+		AjaxControl synchronization = new AjaxControl(driver);
+		flipkartHomePage.textBoxEnterEmailMobileNumber.sendKeys(commonUtilities.readExcel("Products", "userName"));
+		flipkartHomePage.textBoxEnterPassword.sendKeys(commonUtilities.readExcel("Products", "password"));
+		flipkartHomePage.clickOnLogin();
+		Thread.sleep(4000);
+		synchronization.waitForPageToBeReady(driver);
+		synchronization.waitElementForVisible(driver,
+				flipkartHomePage.getUsername(commonUtilities.readExcel("Products", "Name")));
+	}
 	// Method to read data from excel sheet
 	public String readExcel(String sheetName, String variable) throws IOException{
 		DataFormatter formatter = new DataFormatter();
