@@ -12,7 +12,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.wipro.telstra.setup.BaseSetupPage;
+import com.wipro.telstra.driver.DriverSetupPage;
 
 
 
@@ -44,7 +44,7 @@ public class TestListeners implements ITestListener{
 	}
 
 	public void takeScreenShot(String methodName) {
-		BaseSetupPage base = new BaseSetupPage();
+		DriverSetupPage base = new DriverSetupPage();
 	//	driver=base.getDriver();
 		String fileName = new Date().getTime() + ".png";
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);

@@ -5,13 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.wipro.telstra.setup.IntiatePage;
-
-public class CheckOutPage extends IntiatePage{
+public class CheckOutPage {
 
 	private WebDriver driver;
 	public CheckOutPage(WebDriver driver) {
-		super(driver);
+		//super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}

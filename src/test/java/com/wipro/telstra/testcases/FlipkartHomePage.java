@@ -5,14 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import com.wipro.telstra.setup.IntiatePage;
-
-public class FlipkartHomePage extends IntiatePage {
+public class FlipkartHomePage  {
 private WebDriver driver;
 
 	public FlipkartHomePage(WebDriver driver) {
-		super(driver);
+		
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}

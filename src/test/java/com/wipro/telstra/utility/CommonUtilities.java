@@ -23,9 +23,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-import com.wipro.telstra.setup.BaseSetupPage;
+import com.wipro.telstra.driver.DriverSetupPage;
 
-public class CommonUtilities extends BaseSetupPage {
+public class CommonUtilities extends DriverSetupPage {
 
 	public static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 	// Method to read data from excel sheet

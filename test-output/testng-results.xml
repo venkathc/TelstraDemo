@@ -2,21 +2,21 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
     <line>
-      <![CDATA[[[ChromeDriver: chrome on XP (add975b5fea17716e630d543dbd43356)] -> xpath: //div[@class='_2aUbKa' and text()='Venkatesh']]: Loaded successfully]]>
+      <![CDATA[[[ChromeDriver: chrome on XP (fb236d800411902a35a6f7fbbaa7e352)] -> xpath: //div[@class='_2aUbKa' and text()='Venkatesh']]: Loaded successfully]]>
     </line>
     <line>
       <![CDATA[Passed : Actual Text:= [https://www.flipkart.com/] Expected Text:= [https://www.flipkart.com/]]]>
     </line>
     <line>
-      <![CDATA[[[ChromeDriver: chrome on XP (add975b5fea17716e630d543dbd43356)] -> name: q]: Loaded successfully]]>
+      <![CDATA[[[ChromeDriver: chrome on XP (fb236d800411902a35a6f7fbbaa7e352)] -> name: q]: Loaded successfully]]>
     </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15444" started-at="2019-07-29T08:56:50Z" finished-at="2019-07-29T08:57:05Z">
+  <suite name="Default suite" duration-ms="20599" started-at="2019-07-29T09:24:01Z" finished-at="2019-07-29T09:24:21Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="15444" started-at="2019-07-29T08:56:50Z" finished-at="2019-07-29T08:57:05Z">
-      <class name="com.telstra.testcases.FlipkartHomePageTests">
-        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.telstra.testcases.FlipkartHomePageTests@4667ae56]" name="openBrowser" is-config="true" duration-ms="7339" started-at="2019-07-29T08:56:50Z" finished-at="2019-07-29T08:56:57Z">
+    <test name="Default test" duration-ms="20599" started-at="2019-07-29T09:24:01Z" finished-at="2019-07-29T09:24:21Z">
+      <class name="com.wipro.telstra.testcases.FlipkartHomePageTestsCases">
+        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@4667ae56]" name="openBrowser" is-config="true" duration-ms="7773" started-at="2019-07-29T09:24:01Z" finished-at="2019-07-29T09:24:09Z">
           <params>
             <param index="0">
               <value>
@@ -27,7 +27,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="FAIL" signature="tc_buyCamera()[pri:0, instance:com.telstra.testcases.FlipkartHomePageTests@4667ae56]" name="tc_buyCamera" duration-ms="7403" started-at="2019-07-29T08:56:57Z" description="Select camera add to cart navigate to payment options then logout" finished-at="2019-07-29T08:57:04Z">
+        <test-method status="FAIL" signature="tc_buyCamera()[pri:0, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@4667ae56]" name="tc_buyCamera" duration-ms="12153" started-at="2019-07-29T09:24:09Z" description="Select camera add to cart navigate to payment options then logout" finished-at="2019-07-29T09:24:21Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
@@ -37,7 +37,7 @@
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at com.sun.proxy.$Proxy11.click(Unknown Source)
-	at com.telstra.testcases.FlipkartHomePageTests.tc_buyCamera(FlipkartHomePageTests.java:43)
+	at com.wipro.telstra.testcases.FlipkartHomePageTestsCases.tc_buyCamera(FlipkartHomePageTestsCases.java:44)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -68,21 +68,21 @@
           </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
             <line>
-              <![CDATA[[[ChromeDriver: chrome on XP (add975b5fea17716e630d543dbd43356)] -> xpath: //div[@class='_2aUbKa' and text()='Venkatesh']]: Loaded successfully]]>
+              <![CDATA[[[ChromeDriver: chrome on XP (fb236d800411902a35a6f7fbbaa7e352)] -> xpath: //div[@class='_2aUbKa' and text()='Venkatesh']]: Loaded successfully]]>
             </line>
             <line>
               <![CDATA[Passed : Actual Text:= [https://www.flipkart.com/] Expected Text:= [https://www.flipkart.com/]]]>
             </line>
             <line>
-              <![CDATA[[[ChromeDriver: chrome on XP (add975b5fea17716e630d543dbd43356)] -> name: q]: Loaded successfully]]>
+              <![CDATA[[[ChromeDriver: chrome on XP (fb236d800411902a35a6f7fbbaa7e352)] -> name: q]: Loaded successfully]]>
             </line>
           </reporter-output>
         </test-method> <!-- tc_buyCamera -->
-        <test-method status="PASS" signature="tear()[pri:0, instance:com.telstra.testcases.FlipkartHomePageTests@4667ae56]" name="tear" is-config="true" duration-ms="676" started-at="2019-07-29T08:57:04Z" finished-at="2019-07-29T08:57:05Z">
+        <test-method status="PASS" signature="tear()[pri:0, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@4667ae56]" name="tear" is-config="true" duration-ms="647" started-at="2019-07-29T09:24:21Z" finished-at="2019-07-29T09:24:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tear -->
-      </class> <!-- com.telstra.testcases.FlipkartHomePageTests -->
+      </class> <!-- com.wipro.telstra.testcases.FlipkartHomePageTestsCases -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

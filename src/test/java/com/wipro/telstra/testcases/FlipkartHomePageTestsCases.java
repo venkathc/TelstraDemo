@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 
-import com.wipro.telstra.setup.BaseSetupPage;
+import com.wipro.telstra.driver.DriverSetupPage;
 import com.wipro.telstra.utility.AjaxControl;
 import com.wipro.telstra.utility.CommonUtilities;
 import com.wipro.telstra.utility.TelstraReporting;
 
-public class FlipkartHomePageTestsCases extends BaseSetupPage {
+public class FlipkartHomePageTestsCases extends DriverSetupPage {
 
 	@Test(description = "Select camera add to cart navigate to payment options then logout")
 	public void tc_buyCamera() throws Exception {
