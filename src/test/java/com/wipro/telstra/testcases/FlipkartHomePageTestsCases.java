@@ -16,7 +16,7 @@ import com.wipro.telstra.utility.TelstraReporting;
 public class FlipkartHomePageTestsCases extends DriverSetupPage {
 	
 	
-	@Test(description = "Verify user successfully logged in")
+	@Test(priority = 1,description = "Verify user successfully logged in")
 	public void tc_loginFlipkart() throws IOException, InterruptedException {
 		FlipkartHomePage flipkartHomePage = new FlipkartHomePage(driver);
 		flipkartHomePage.login(driver);
@@ -26,7 +26,7 @@ public class FlipkartHomePageTestsCases extends DriverSetupPage {
 	}
 
 	
-	@Test(description = "Verify user selects camera and  add to cart")
+	@Test(priority = 2,description = "Verify user selects camera and  add to cart")
 	public void tc_buyCamera() throws Exception {
 		
 		FlipkartHomePage flipkartHomePage = new FlipkartHomePage(driver);
@@ -36,7 +36,8 @@ public class FlipkartHomePageTestsCases extends DriverSetupPage {
 		//Pass the parameter to search from excel file
 		flipkartHomePage.textBoxSearchForProducts.sendKeys(CommonUtilities.readExcel("Products", "Cam"));
 		flipkartHomePage.textBoxSearchForProducts.sendKeys(Keys.RETURN);
-		AjaxControl.waitForPageToBeReady(driver);
+
+		AjaxControl.waitElementForVisible(driver, flipkartHomePage.selectCamera(CommonUtilities.readExcel("Products", "CameraModel")));
 		CommonUtilities.scrollToWebElement(driver,flipkartHomePage.selectCamera(CommonUtilities.readExcel("Products", "CameraModel")));
 		CommonUtilities.clickUsingJavaScript(driver,flipkartHomePage.selectCamera(CommonUtilities.readExcel("Products", "CameraModel")));
 		String parentTab = driver.getWindowHandle();
@@ -53,16 +54,17 @@ public class FlipkartHomePageTestsCases extends DriverSetupPage {
 
 	}
 
-	@Test(description = "Verify user navigates to payment options then logout")
+	@Test(priority = 3,description = "Verify user navigates to payment options then logout")
 	public void tc_checkOutCart() throws Exception {
 		
 		FlipkartHomePage flipkartHomePage = new FlipkartHomePage(driver);
 		flipkartHomePage.login(driver);
 		AjaxControl.waitForElementClickable(driver, flipkartHomePage.selectLink("Cart"));
+		
 		//Pass the link name to click as parameter
 		CommonUtilities.clickUsingJavaScript(driver,flipkartHomePage.selectLink("Cart"));
 		AjaxControl.waitForElementClickable(driver, flipkartHomePage.buttonPlaceOrder);
-		flipkartHomePage.buttonPlaceOrder.click();
+		CommonUtilities.clickUsingJavaScript(driver,flipkartHomePage.buttonPlaceOrder);
 		CheckOutPage checkOutPage = new CheckOutPage(driver);
 		AjaxControl.waitElementForVisible(driver, checkOutPage.buttonCONTINUE);
 		checkOutPage.buttonCONTINUE.click();
