@@ -14,8 +14,6 @@ import org.testng.ITestResult;
 
 import com.wipro.telstra.driver.DriverSetupPage;
 
-
-
 /**
  * @author Venkatesh Kumar
  *
@@ -31,14 +29,10 @@ public class TestListeners implements ITestListener{
 		System.out.println("Started Test Method--->"+ result.getInstanceName().toString()+ "-> "+result.getMethod().getMethodName() + " at:" + result.getStartMillis());
 		
 	}
-
-
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
 		
 	}
-
-	
 	public void onTestFailure(ITestResult result) {
 		System.out.println("Error " + result.getName() + " test has failed");
 		String methodName = result.getName().toString().trim();

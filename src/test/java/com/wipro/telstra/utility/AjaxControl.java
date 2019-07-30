@@ -17,37 +17,31 @@ import org.testng.Reporter;
  */
 public class AjaxControl {
 	
-	private static final int TIMEOUT = 5;
-    private static final int POLLING = 100;
+	public static final int TIMEOUT = 5;
+    public static final int POLLING = 100;
 
-    protected WebDriver driver;
-    private WebDriverWait wait;
+    public static WebDriver driver;
+    public static WebDriverWait wait;
 
     
-    public AjaxControl(WebDriver driver) {
-        this.driver = driver;
-        wait = new WebDriverWait(driver, TIMEOUT, POLLING);
-        PageFactory.initElements(new AjaxElementLocatorFactory(driver, TIMEOUT), this);
-    }
-
-    protected void waitForElementToAppear(By locator) {
+    public static void waitForElementToAppear(By locator) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         Reporter.log(locator.toString() + ": Loaded successfully");
     }
 
-    protected void waitForElementToDisappear(By locator) {
+    public static void waitForElementToDisappear(By locator) {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
         Reporter.log(locator.toString() + ": Loaded successfully");
     }
 
     
-    protected void waitForTextToDisappear(By locator, String text) {
+    public static void waitForTextToDisappear(By locator, String text) {
         wait.until(ExpectedConditions.not(ExpectedConditions.textToBe(locator, text)));
         Reporter.log(locator.toString() + ": Loaded successfully");
     }
     
   //Method to wait page until element visible
-  	public  void waitElementForVisible(WebDriver driver, WebElement locator) {
+  	public static void waitElementForVisible(WebDriver driver, WebElement locator) {
   		try {
   			wait.until(ExpectedConditions.visibilityOf(locator));
   			Reporter.log(locator.toString() + ": Loaded successfully");
@@ -58,8 +52,13 @@ public class AjaxControl {
   		
   	}
 
-  //Method to wait until page loads
-  	public  boolean waitForPageToBeReady(WebDriver driver) {
+//Method to wait until page loads
+  	
+/**
+ * @param driver
+ * @return
+ */
+  	public static  boolean waitForPageToBeReady(WebDriver driver) {
   		
   		ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
   			public Boolean apply(WebDriver driver) {

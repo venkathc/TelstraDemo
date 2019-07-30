@@ -26,7 +26,6 @@ public class DriverSetupPage extends ReadFileData {
 
 	public RemoteWebDriver driver;
 	public WebDriverWait wait;
-
 	public String currnetlocation = System.getProperty("user.dir");
 
 	@Parameters({ "browser" })
@@ -38,7 +37,7 @@ public class DriverSetupPage extends ReadFileData {
 		try {
 
 			if (browser.equalsIgnoreCase("Firefox")) {
-				System.out.println("Launching Firefox browser");
+				
 				System.setProperty("webdriver.gecko.driver", currnetlocation + "/Drivers/geckodriver.exe");
 				driver = new FirefoxDriver();
 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -61,7 +60,6 @@ public class DriverSetupPage extends ReadFileData {
 				}
 
 			} else if (browser.equalsIgnoreCase("IE")) {
-				System.out.println("Launching IE browser");
 				System.setProperty("webdriver.ie.driver", currnetlocation + "/Drivers/IEDriverServer.exe");
 				driver = new InternetExplorerDriver();
 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);

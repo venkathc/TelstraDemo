@@ -30,30 +30,13 @@ import com.wipro.telstra.pageObjects.FlipkartHomePage;
 public class CommonUtilities extends DriverSetupPage {
 
 	public static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-	
-	
-	public void login(WebDriver driver) throws IOException, InterruptedException {
-		
-		CommonUtilities commonUtilities = new CommonUtilities();
-		FlipkartHomePage flipkartHomePage = new FlipkartHomePage(driver);
-		AjaxControl synchronization = new AjaxControl(driver);
-		flipkartHomePage.textBoxEnterEmailMobileNumber.sendKeys(commonUtilities.readExcel("Products", "userName"));
-		flipkartHomePage.textBoxEnterPassword.sendKeys(commonUtilities.readExcel("Products", "password"));
-		flipkartHomePage.clickOnLogin();
-		
-		synchronization.waitForPageToBeReady(driver);
-		synchronization.waitElementForVisible(driver,
-				flipkartHomePage.getUsername(commonUtilities.readExcel("Products", "Name")));
-	}
-	
-	
 	/**
 	 * @param sheetName
 	 * @param variable
 	 * @return
 	 * @throws IOException
 	 */
-	public String readExcel(String sheetName, String variable) throws IOException{
+	public static String readExcel(String sheetName, String variable) throws IOException{
 		DataFormatter formatter = new DataFormatter();
 	  	String filePath = System.getProperty("user.dir");
 	    File file = new File(filePath+"/src/test/resources/TestData.xlsx");
@@ -95,10 +78,10 @@ public class CommonUtilities extends DriverSetupPage {
 	 * @param locator
 	 * @throws Exception
 	 */
-	public void clickUsingJavaScript(WebDriver driver, WebElement locator) throws Exception {
+	public static void clickUsingJavaScript(WebDriver driver, WebElement locator) throws Exception {
 		try {
 			if (locator.isEnabled() && locator.isDisplayed()) {
-				System.out.println("Clicking on element  using java script" + locator.getText());
+				System.out.println("Clicked on element  using java script" );
 
 				((JavascriptExecutor) driver).executeScript("arguments[0].click();", locator);
 			} else {
@@ -122,7 +105,7 @@ public class CommonUtilities extends DriverSetupPage {
 	 * @param driver
 	 * @param url
 	 */
-	public void scrollToBottomOfPage(WebDriver driver, String url) {
+	public static void scrollToBottomOfPage(WebDriver driver, String url) {
 		try {
 			driver.navigate().to(url);
 			((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
@@ -138,7 +121,7 @@ public class CommonUtilities extends DriverSetupPage {
 	 * @param driver
 	 * @param url
 	 */
-	public void scrollToTopOfPage(WebDriver driver, String url) {
+	public static void scrollToTopOfPage(WebDriver driver, String url) {
 		try {
 			driver.navigate().to(url);
 			((JavascriptExecutor) driver).executeScript("window.scrollBy(0, -250)", "");
@@ -153,7 +136,7 @@ public class CommonUtilities extends DriverSetupPage {
 	 * @param driver
 	 * @param locator
 	 */
-	public void moveToElement(WebDriver driver, WebElement locator) {
+	public static void moveToElement(WebDriver driver, WebElement locator) {
 		Actions action = new Actions(driver);
 		action.moveToElement(locator).perform();
 
@@ -164,7 +147,7 @@ public class CommonUtilities extends DriverSetupPage {
 	 * @param driver
 	 * @param locator
 	 */
-	public void scrollToWebElement(WebDriver driver, WebElement locator) {
+	public static void scrollToWebElement(WebDriver driver, WebElement locator) {
 		try {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].scrollIntoView();", locator);
@@ -180,7 +163,7 @@ public class CommonUtilities extends DriverSetupPage {
 	 * @param element
 	 * @param elementToSelect
 	 */
-	public void selectFromDropDownByVisibleText(WebElement element, String elementToSelect) {
+	public static void selectFromDropDownByVisibleText(WebElement element, String elementToSelect) {
 		try {
 			Select select = new Select(element);
 			select.selectByVisibleText(elementToSelect);
@@ -197,7 +180,7 @@ public class CommonUtilities extends DriverSetupPage {
 	 * @param element
 	 * @param elementToSelect
 	 */
-	public void selectFromDropDownByValue(WebElement element, String elementToSelect) {
+	public static void selectFromDropDownByValue(WebElement element, String elementToSelect) {
 		try {
 			Select select = new Select(element);
 			select.selectByValue(elementToSelect);
