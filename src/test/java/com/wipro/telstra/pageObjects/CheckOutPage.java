@@ -33,6 +33,12 @@ public class CheckOutPage {
 	@FindBy(xpath="//a[text()='Sony CyberShot DSC-W800/SC IN5']")
 	public WebElement textSonyCyberShotDSC;
 	
+	@FindBy(xpath = "//div[text()='Remove']")
+	public WebElement linkRemove;
+	
+	@FindBy(xpath = "//div[text()='Cancel']/following-sibling::div[text()='Remove']")
+	public WebElement popupLinkRemove;
+	
 	@FindBy(xpath = "//a[@href='/plus']")
 	public WebElement linkFlipKart;
 	

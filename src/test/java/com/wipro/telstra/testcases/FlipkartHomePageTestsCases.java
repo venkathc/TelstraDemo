@@ -78,4 +78,18 @@ public class FlipkartHomePageTestsCases extends DriverSetupPage {
 		
 	}
 	
+	@Test(priority = 4, description = "Remove the added product from cart")
+	public void tc_removeItem() throws Exception {
+		FlipkartHomePage flipkartHomePage = new FlipkartHomePage(driver);
+		flipkartHomePage.login(driver);
+		AjaxControl.waitForElementClickable(driver, flipkartHomePage.selectLink("Cart"));
+		
+		//Pass the link name to click as parameter
+		CommonUtilities.clickUsingJavaScript(driver,flipkartHomePage.selectLink("Cart"));
+		AjaxControl.waitForElementClickable(driver, flipkartHomePage.buttonPlaceOrder);
+		CheckOutPage checkOutPage = new CheckOutPage(driver);
+		checkOutPage.linkRemove.click();
+		checkOutPage.popupLinkRemove.click();
+	}
+	
 }
