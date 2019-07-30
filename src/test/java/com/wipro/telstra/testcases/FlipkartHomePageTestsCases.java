@@ -89,6 +89,7 @@ public class FlipkartHomePageTestsCases extends DriverSetupPage {
 		AjaxControl.waitForElementClickable(driver, flipkartHomePage.buttonPlaceOrder);
 		CheckOutPage checkOutPage = new CheckOutPage(driver);
 		checkOutPage.linkRemove.click();
+		AjaxControl.waitElementForVisible(driver,checkOutPage.popupLinkRemove);
 		checkOutPage.popupLinkRemove.click();
 	}
 	
