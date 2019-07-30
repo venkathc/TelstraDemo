@@ -54,13 +54,14 @@ public class FlipkartHomePageTestsCases extends DriverSetupPage {
 	}
 
 	@Test(description = "Verify user navigates to payment options then logout")
-	public void tc_checkOutCart() throws InterruptedException, IOException {
+	public void tc_checkOutCart() throws Exception {
 		
 		FlipkartHomePage flipkartHomePage = new FlipkartHomePage(driver);
 		flipkartHomePage.login(driver);
+		AjaxControl.waitForElementClickable(driver, flipkartHomePage.selectLink("Cart"));
 		//Pass the link name to click as parameter
-		flipkartHomePage.clickLink("Cart");
-		AjaxControl.waitElementForVisible(driver, flipkartHomePage.buttonPlaceOrder);
+		CommonUtilities.clickUsingJavaScript(driver,flipkartHomePage.selectLink("Cart"));
+		AjaxControl.waitForElementClickable(driver, flipkartHomePage.buttonPlaceOrder);
 		flipkartHomePage.buttonPlaceOrder.click();
 		CheckOutPage checkOutPage = new CheckOutPage(driver);
 		AjaxControl.waitElementForVisible(driver, checkOutPage.buttonCONTINUE);

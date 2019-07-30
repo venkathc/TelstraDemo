@@ -69,18 +69,21 @@ public  void login(WebDriver driver) throws IOException, InterruptedException {
 		textBoxEnterEmailMobileNumber.sendKeys(CommonUtilities.readExcel("Products", "userName"));
 		textBoxEnterPassword.sendKeys(CommonUtilities.readExcel("Products", "password"));
 		clickOnLogin();
-		AjaxControl.waitForPageToBeReady(driver);
 		AjaxControl.waitElementForVisible(driver,
 		getUsername(CommonUtilities.readExcel("Products", "Name")));
 	}
 
+public WebElement selectLink(String linkName) {
+	return driver.findElement(By.xpath("//span[text()='"+linkName+"']"));
+			
+}
 //Method to click on the links 
 /**
  * @param linkName
  * @return
  */
 	public void clickLink(String linkName) {
-		 driver.findElement(By.xpath("//span[text()='"+linkName+"']")).click();;
+		 driver.findElement(By.xpath("//span[text()='"+linkName+"']")).click();
 				
 	}
 	

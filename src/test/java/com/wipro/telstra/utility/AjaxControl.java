@@ -2,6 +2,9 @@ package com.wipro.telstra.utility;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -51,6 +54,16 @@ public class AjaxControl {
   		}
   		
   	}
+
+  	public static void waitForElementClickable(WebDriver driver, WebElement locator) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(locator));
+		} catch ( NoSuchElementException e) {
+
+		}
+
+	}
 
 //Method to wait until page loads
   	
