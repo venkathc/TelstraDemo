@@ -38,7 +38,7 @@ public class CommonUtilities extends DriverSetupPage {
 		flipkartHomePage.textBoxEnterEmailMobileNumber.sendKeys(commonUtilities.readExcel("Products", "userName"));
 		flipkartHomePage.textBoxEnterPassword.sendKeys(commonUtilities.readExcel("Products", "password"));
 		flipkartHomePage.clickOnLogin();
-		Thread.sleep(4000);
+		
 		synchronization.waitForPageToBeReady(driver);
 		synchronization.waitElementForVisible(driver,
 				flipkartHomePage.getUsername(commonUtilities.readExcel("Products", "Name")));

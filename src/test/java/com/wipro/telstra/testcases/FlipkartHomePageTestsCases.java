@@ -2,11 +2,9 @@ package com.wipro.telstra.testcases;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import com.wipro.telstra.driver.DriverSetupPage;
 import com.wipro.telstra.utility.AjaxControl;
 import com.wipro.telstra.utility.CommonUtilities;
