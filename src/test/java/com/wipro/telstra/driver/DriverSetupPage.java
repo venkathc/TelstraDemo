@@ -18,6 +18,10 @@ import org.testng.annotations.Parameters;
 
 import com.wipro.telstra.utility.ReadFileData;
 
+/**
+ * @author Venkatesh Kumar
+ *
+ */
 public class DriverSetupPage extends ReadFileData {
 
 	public RemoteWebDriver driver;

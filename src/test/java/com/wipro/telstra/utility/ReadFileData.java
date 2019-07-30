@@ -5,12 +5,17 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * @author venkatesh kumar
+ *
+ */
+
 public class ReadFileData {
 
 	Properties prop = new Properties();
 	InputStream input = null;
-	
 	public String testUrl;
+	
 	public ReadFileData() {
 		try {
 			String currnetlocation = System.getProperty("user.dir");
@@ -26,6 +31,7 @@ public class ReadFileData {
 		}
 	}
 
+	
 	public String getUrl() {
 		return testUrl;
 

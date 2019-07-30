@@ -8,6 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Reporter;
 import org.testng.asserts.SoftAssert;
 
+/**
+ * @author Venkatesh Kumar
+ *
+ */
 public class TelstraReporting  {
 	private WebDriver driver;
 	public TelstraReporting(WebDriver driver) {
@@ -19,6 +23,12 @@ public class TelstraReporting  {
 	public static SoftAssert softAssert = new SoftAssert();
 	
 	// Method to verify whether the element present on page
+	
+			/**
+			 * @param driver
+			 * @param locator
+			 * @throws Exception
+			 */
 			public  void verifyElementPresent(WebDriver driver, By locator) throws Exception {
 				try {
 
@@ -37,7 +47,13 @@ public class TelstraReporting  {
 
 			}	
 		
-	
+	// Verify expected text on webPage
+			
+	/**
+	 * @param locator
+	 * @param expectedText
+	 * @throws NoSuchElementException
+	 */
 	public  void verifyText(WebElement locator, String expectedText) throws NoSuchElementException {
 		String actualText;
 		try {
@@ -57,7 +73,12 @@ public class TelstraReporting  {
 		}
 	}
 
+	//Verify string on webpage
 	
+	/**
+	 * @param actualText
+	 * @param expectedText
+	 */
 	public void verifyString(String actualText, String expectedText) {
 
 		try {

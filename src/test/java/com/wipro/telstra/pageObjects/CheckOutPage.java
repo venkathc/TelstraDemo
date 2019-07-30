@@ -1,10 +1,14 @@
-package com.wipro.telstra.testcases;
+package com.wipro.telstra.pageObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+/**
+ * @author Venkatesh Kumar
+ *
+ */
 public class CheckOutPage {
 
 	private WebDriver driver;

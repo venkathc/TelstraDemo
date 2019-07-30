@@ -11,6 +11,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
+/**
+ * @author Venkatesh Kumar
+ *
+ */
 public class AjaxControl {
 	
 	private static final int TIMEOUT = 5;
@@ -19,6 +23,7 @@ public class AjaxControl {
     protected WebDriver driver;
     private WebDriverWait wait;
 
+    
     public AjaxControl(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, TIMEOUT, POLLING);
@@ -35,6 +40,7 @@ public class AjaxControl {
         Reporter.log(locator.toString() + ": Loaded successfully");
     }
 
+    
     protected void waitForTextToDisappear(By locator, String text) {
         wait.until(ExpectedConditions.not(ExpectedConditions.textToBe(locator, text)));
         Reporter.log(locator.toString() + ": Loaded successfully");

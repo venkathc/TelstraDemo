@@ -24,11 +24,13 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.wipro.telstra.driver.DriverSetupPage;
-import com.wipro.telstra.testcases.FlipkartHomePage;
+import com.wipro.telstra.pageObjects.FlipkartHomePage;
+
 
 public class CommonUtilities extends DriverSetupPage {
 
 	public static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+	
 	
 	public void login(WebDriver driver) throws IOException, InterruptedException {
 		
@@ -43,7 +45,14 @@ public class CommonUtilities extends DriverSetupPage {
 		synchronization.waitElementForVisible(driver,
 				flipkartHomePage.getUsername(commonUtilities.readExcel("Products", "Name")));
 	}
-	// Method to read data from excel sheet
+	
+	
+	/**
+	 * @param sheetName
+	 * @param variable
+	 * @return
+	 * @throws IOException
+	 */
 	public String readExcel(String sheetName, String variable) throws IOException{
 		DataFormatter formatter = new DataFormatter();
 	  	String filePath = System.getProperty("user.dir");
@@ -80,6 +89,12 @@ public class CommonUtilities extends DriverSetupPage {
 	}
 
 // Method to click element using java script
+	
+	/**
+	 * @param driver
+	 * @param locator
+	 * @throws Exception
+	 */
 	public void clickUsingJavaScript(WebDriver driver, WebElement locator) throws Exception {
 		try {
 			if (locator.isEnabled() && locator.isDisplayed()) {
@@ -102,6 +117,11 @@ public class CommonUtilities extends DriverSetupPage {
 	}
 
 	// Scroll down to bottom of the page
+	
+	/**
+	 * @param driver
+	 * @param url
+	 */
 	public void scrollToBottomOfPage(WebDriver driver, String url) {
 		try {
 			driver.navigate().to(url);
@@ -113,6 +133,11 @@ public class CommonUtilities extends DriverSetupPage {
 	}
 
 	// Scroll to top of the page
+	
+	/**
+	 * @param driver
+	 * @param url
+	 */
 	public void scrollToTopOfPage(WebDriver driver, String url) {
 		try {
 			driver.navigate().to(url);
@@ -123,12 +148,22 @@ public class CommonUtilities extends DriverSetupPage {
 		}
 	}
 // Method to move element
+	
+	/**
+	 * @param driver
+	 * @param locator
+	 */
 	public void moveToElement(WebDriver driver, WebElement locator) {
 		Actions action = new Actions(driver);
 		action.moveToElement(locator).perform();
 
 	}
 //Method to move cursor to visible element
+	
+	/**
+	 * @param driver
+	 * @param locator
+	 */
 	public void scrollToWebElement(WebDriver driver, WebElement locator) {
 		try {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -140,6 +175,11 @@ public class CommonUtilities extends DriverSetupPage {
 
 	}
 // Method to select element from Dropdown box by visible text
+	
+	/**
+	 * @param element
+	 * @param elementToSelect
+	 */
 	public void selectFromDropDownByVisibleText(WebElement element, String elementToSelect) {
 		try {
 			Select select = new Select(element);
@@ -152,6 +192,11 @@ public class CommonUtilities extends DriverSetupPage {
 	}
 
 	// Method to select element from Dropdown box by visible value
+	
+	/**
+	 * @param element
+	 * @param elementToSelect
+	 */
 	public void selectFromDropDownByValue(WebElement element, String elementToSelect) {
 		try {
 			Select select = new Select(element);
