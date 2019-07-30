@@ -83,13 +83,13 @@ public class FlipkartHomePageTestsCases extends DriverSetupPage {
 		FlipkartHomePage flipkartHomePage = new FlipkartHomePage(driver);
 		flipkartHomePage.login(driver);
 		AjaxControl.waitForElementClickable(driver, flipkartHomePage.selectLink("Cart"));
-		
 		//Pass the link name to click as parameter
 		CommonUtilities.clickUsingJavaScript(driver,flipkartHomePage.selectLink("Cart"));
-		AjaxControl.waitForElementClickable(driver, flipkartHomePage.buttonPlaceOrder);
 		CheckOutPage checkOutPage = new CheckOutPage(driver);
+		Thread.sleep(2000);
+		AjaxControl.waitForElementClickable(driver, checkOutPage.linkRemove);
 		checkOutPage.linkRemove.click();
-		AjaxControl.waitElementForVisible(driver,checkOutPage.popupLinkRemove);
+		AjaxControl.waitForElementClickable(driver,checkOutPage.popupLinkRemove);
 		checkOutPage.popupLinkRemove.click();
 	}
 	
