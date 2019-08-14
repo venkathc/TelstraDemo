@@ -25,6 +25,7 @@ private WebDriver driver;
 	}
 
 	public String expURL = "https://www.flipkart.com/";
+	public String expPlaceOrder = "PLACE ORDER";
 
 	@FindBy(name = "q")
 	public WebElement textBoxSearchForProducts;
@@ -94,7 +95,7 @@ public WebElement selectLink(String linkName) {
  */
 	public WebElement selectCamera(String camName) {
 		return driver.findElement(By.xpath(
-				"//div[@data-id='CAMDVGUGJ4G5FVDM']/div[@class='_1UoZlX']//div[contains(text(),'" + camName + "')]"));
+				"//div[contains(text(),'" + camName + "')]"));
 	}
 
 //Method to get logged user name	

@@ -44,7 +44,7 @@ public class DriverSetupPage extends ReadFileData {
 			} else if (browser.equalsIgnoreCase("chrome")) {
 
 				if (os.contains("mac")) {
-					System.setProperty("webdriver.chrome.driver", currnetlocation + "/Drivers/chromedrivermac");
+					System.setProperty("webdriver.chrome.driver", currnetlocation + "/Drivers/chromedriver");
 					// driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
 					driver = new ChromeDriver();
 					driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);

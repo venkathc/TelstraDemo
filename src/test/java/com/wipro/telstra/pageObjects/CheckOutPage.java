@@ -18,7 +18,7 @@ public class CheckOutPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public String expSonyCyberShotDSC = "Sony CyberShot DSC-W800/SC IN5";
+	public String expSonyCyberShotDSC = "Sony CyberShot DSC-WX220/BC IN5";
 	public String expPaymentOptions = "PAYMENT OPTIONS";
 	
 	@FindBy(xpath="//input[@type='email']")
@@ -30,8 +30,6 @@ public class CheckOutPage {
 	@FindBy(xpath="//span[text()='Payment Options']")
 	public WebElement textPaymentOptions;
 	
-	@FindBy(xpath="//a[text()='Sony CyberShot DSC-W800/SC IN5']")
-	public WebElement textSonyCyberShotDSC;
 	
 	@FindBy(xpath = "//div[text()='Remove']")
 	public WebElement linkRemove;

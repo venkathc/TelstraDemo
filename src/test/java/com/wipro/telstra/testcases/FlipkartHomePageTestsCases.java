@@ -36,8 +36,9 @@ public class FlipkartHomePageTestsCases extends DriverSetupPage {
 		//Pass the parameter to search from excel file
 		flipkartHomePage.textBoxSearchForProducts.sendKeys(CommonUtilities.readExcel("Products", "Cam"));
 		flipkartHomePage.textBoxSearchForProducts.sendKeys(Keys.RETURN);
-
-		AjaxControl.waitElementForVisible(driver, flipkartHomePage.selectCamera(CommonUtilities.readExcel("Products", "CameraModel")));
+		Thread.sleep(3000);
+		//AjaxControl.waitElementForVisible(driver, flipkartHomePage.selectCamera(CommonUtilities.readExcel("Products", "CameraModel")));
+		System.out.println(flipkartHomePage.selectCamera(CommonUtilities.readExcel("Products", "CameraModel")).toString());
 		CommonUtilities.scrollToWebElement(driver,flipkartHomePage.selectCamera(CommonUtilities.readExcel("Products", "CameraModel")));
 		CommonUtilities.clickUsingJavaScript(driver,flipkartHomePage.selectCamera(CommonUtilities.readExcel("Products", "CameraModel")));
 		String parentTab = driver.getWindowHandle();
@@ -48,7 +49,7 @@ public class FlipkartHomePageTestsCases extends DriverSetupPage {
 		flipkartHomePage.buttonAddToCart.click();
 		AjaxControl.waitElementForVisible(driver, flipkartHomePage.buttonPlaceOrder);
 		CheckOutPage checkOutPage = new CheckOutPage(driver);
-		TelstraReporting.verifyText(checkOutPage.textSonyCyberShotDSC, checkOutPage.expSonyCyberShotDSC);
+		TelstraReporting.verifyText(flipkartHomePage.buttonPlaceOrder,flipkartHomePage.expPlaceOrder);
 		
 		
 
@@ -65,6 +66,7 @@ public class FlipkartHomePageTestsCases extends DriverSetupPage {
 		CommonUtilities.clickUsingJavaScript(driver,flipkartHomePage.selectLink("Cart"));
 		AjaxControl.waitForElementClickable(driver, flipkartHomePage.buttonPlaceOrder);
 		CommonUtilities.clickUsingJavaScript(driver,flipkartHomePage.buttonPlaceOrder);
+		
 		CheckOutPage checkOutPage = new CheckOutPage(driver);
 		AjaxControl.waitElementForVisible(driver, checkOutPage.buttonCONTINUE);
 		checkOutPage.buttonCONTINUE.click();
