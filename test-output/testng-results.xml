@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
+    <line>
+      <![CDATA[Passed Actual Text:https://www.flipkart.com/]]>
+    </line>
     <line>
       <![CDATA[Pass Text present PLACE ORDER]]>
     </line>
+    <line>
+      <![CDATA[Pass Text present PAYMENT OPTIONS]]>
+    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="12170" started-at="2019-08-12T10:27:03Z" finished-at="2019-08-12T10:27:15Z">
+  <suite name="Default suite" duration-ms="41676" started-at="2019-08-14T07:58:17Z" finished-at="2019-08-14T07:58:58Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="12170" started-at="2019-08-12T10:27:03Z" finished-at="2019-08-12T10:27:15Z">
+    <test name="Default test" duration-ms="41676" started-at="2019-08-14T07:58:17Z" finished-at="2019-08-14T07:58:58Z">
       <class name="com.wipro.telstra.testcases.FlipkartHomePageTestsCases">
-        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@5700d6b1]" name="openBrowser" is-config="true" duration-ms="4565" started-at="2019-08-12T15:57:03Z" finished-at="2019-08-12T15:57:08Z">
+        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@3fee9989]" name="openBrowser" is-config="true" duration-ms="4753" started-at="2019-08-14T13:28:17Z" finished-at="2019-08-14T13:28:21Z">
           <params>
             <param index="0">
               <value>
@@ -21,14 +27,77 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="tc_buyCamera()[pri:2, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@5700d6b1]" name="tc_buyCamera" duration-ms="7439" started-at="2019-08-12T15:57:08Z" description="Verify user selects camera and  add to cart" finished-at="2019-08-12T15:57:15Z">
+        <test-method status="PASS" signature="tc_loginFlipkart()[pri:1, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@3fee9989]" name="tc_loginFlipkart" duration-ms="1858" started-at="2019-08-14T13:28:21Z" description="Verify user successfully logged in" finished-at="2019-08-14T13:28:23Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Passed Actual Text:https://www.flipkart.com/]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tc_loginFlipkart -->
+        <test-method status="PASS" signature="tear()[pri:0, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@3fee9989]" name="tear" is-config="true" duration-ms="116" started-at="2019-08-14T13:28:23Z" finished-at="2019-08-14T13:28:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tear -->
+        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@3fee9989]" name="openBrowser" is-config="true" duration-ms="5131" started-at="2019-08-14T13:28:23Z" finished-at="2019-08-14T13:28:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method status="PASS" signature="tc_buyCamera()[pri:2, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@3fee9989]" name="tc_buyCamera" duration-ms="12619" started-at="2019-08-14T13:28:28Z" description="Verify user selects camera and  add to cart" finished-at="2019-08-14T13:28:41Z">
           <reporter-output>
             <line>
               <![CDATA[Pass Text present PLACE ORDER]]>
             </line>
           </reporter-output>
         </test-method> <!-- tc_buyCamera -->
-        <test-method status="PASS" signature="tear()[pri:0, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@5700d6b1]" name="tear" is-config="true" duration-ms="146" started-at="2019-08-12T15:57:15Z" finished-at="2019-08-12T15:57:15Z">
+        <test-method status="PASS" signature="tear()[pri:0, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@3fee9989]" name="tear" is-config="true" duration-ms="105" started-at="2019-08-14T13:28:41Z" finished-at="2019-08-14T13:28:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tear -->
+        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@3fee9989]" name="openBrowser" is-config="true" duration-ms="4576" started-at="2019-08-14T13:28:41Z" finished-at="2019-08-14T13:28:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method status="PASS" signature="tc_checkOutCart()[pri:3, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@3fee9989]" name="tc_checkOutCart" duration-ms="4016" started-at="2019-08-14T13:28:46Z" description="Verify user navigates to payment options then logout" finished-at="2019-08-14T13:28:50Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Pass Text present PAYMENT OPTIONS]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tc_checkOutCart -->
+        <test-method status="PASS" signature="tear()[pri:0, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@3fee9989]" name="tear" is-config="true" duration-ms="105" started-at="2019-08-14T13:28:50Z" finished-at="2019-08-14T13:28:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tear -->
+        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@3fee9989]" name="openBrowser" is-config="true" duration-ms="4357" started-at="2019-08-14T13:28:50Z" finished-at="2019-08-14T13:28:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openBrowser -->
+        <test-method status="PASS" signature="tc_removeItem()[pri:4, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@3fee9989]" name="tc_removeItem" duration-ms="3919" started-at="2019-08-14T13:28:54Z" description="Remove the added product from cart" finished-at="2019-08-14T13:28:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc_removeItem -->
+        <test-method status="PASS" signature="tear()[pri:0, instance:com.wipro.telstra.testcases.FlipkartHomePageTestsCases@3fee9989]" name="tear" is-config="true" duration-ms="98" started-at="2019-08-14T13:28:58Z" finished-at="2019-08-14T13:28:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tear -->

@@ -1,0 +1,90 @@
+{
+  "uid" : "29af7a08e103b3e7",
+  "name" : "Verify user successfully logged in",
+  "fullName" : "com.wipro.telstra.testcases.FlipkartHomePageTestsCases.tc_loginFlipkart",
+  "historyId" : "3a15fa174dae780dadc1b14f876f67fc",
+  "time" : {
+    "start" : 1566199645472,
+    "stop" : 1566199647642,
+    "duration" : 2170
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ {
+    "name" : "openBrowser",
+    "time" : {
+      "start" : 1566199639163,
+      "stop" : 1566199644333,
+      "duration" : 5170
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "tear",
+    "time" : {
+      "start" : 1566199647650,
+      "stop" : 1566199647905,
+      "duration" : 255
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "com.wipro.telstra.testcases.FlipkartHomePageTestsCases"
+  }, {
+    "name" : "testClass",
+    "value" : "com.wipro.telstra.testcases.FlipkartHomePageTestsCases"
+  }, {
+    "name" : "testMethod",
+    "value" : "tc_loginFlipkart"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Demo Suite"
+  }, {
+    "name" : "suite",
+    "value" : "Chrome Test"
+  }, {
+    "name" : "subSuite",
+    "value" : "com.wipro.telstra.testcases.FlipkartHomePageTestsCases"
+  }, {
+    "name" : "host",
+    "value" : "C02VX0BAG8WN"
+  }, {
+    "name" : "thread",
+    "value" : "54009@C02VX0BAG8WN.main(1)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "29af7a08e103b3e7.json",
+  "parameterValues" : [ "chrome" ]
+}

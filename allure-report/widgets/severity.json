@@ -1,0 +1,41 @@
+[ {
+  "uid" : "c57d222bd43e9fe",
+  "name" : "Verify user navigates to payment options then logout",
+  "time" : {
+    "start" : 1566199662772,
+    "stop" : 1566199667717,
+    "duration" : 4945
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "36c0a9fe26c3251e",
+  "name" : "Remove the added product from cart",
+  "time" : {
+    "start" : 1566199671549,
+    "stop" : 1566199675520,
+    "duration" : 3971
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "322bb02ab7037e0f",
+  "name" : "Verify user selects camera and  add to cart",
+  "time" : {
+    "start" : 1566199651913,
+    "stop" : 1566199658883,
+    "duration" : 6970
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "29af7a08e103b3e7",
+  "name" : "Verify user successfully logged in",
+  "time" : {
+    "start" : 1566199645472,
+    "stop" : 1566199647642,
+    "duration" : 2170
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

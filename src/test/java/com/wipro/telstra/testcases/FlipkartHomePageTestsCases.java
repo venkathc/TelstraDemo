@@ -12,11 +12,18 @@ import com.wipro.telstra.utility.AjaxControl;
 import com.wipro.telstra.utility.CommonUtilities;
 import com.wipro.telstra.utility.TelstraReporting;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+
 
 public class FlipkartHomePageTestsCases extends DriverSetupPage {
 	
-	
-	@Test(priority = 1,description = "Verify user successfully logged in")
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Verify home page title")
+	@Story("Test Verify user successfully logged in")
+	@Test(priority = 1)
 	public void tc_loginFlipkart() throws IOException, InterruptedException {
 		FlipkartHomePage flipkartHomePage = new FlipkartHomePage(driver);
 		flipkartHomePage.login(driver);
@@ -25,8 +32,10 @@ public class FlipkartHomePageTestsCases extends DriverSetupPage {
 		
 	}
 
-	
-	@Test(priority = 2,description = "Verify user selects camera and  add to cart")
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Verify user selects camera and  add to cart")
+	@Story("Test User added camera to cart")
+	@Test(priority = 2)
 	public void tc_buyCamera() throws Exception {
 		
 		FlipkartHomePage flipkartHomePage = new FlipkartHomePage(driver);
@@ -55,7 +64,10 @@ public class FlipkartHomePageTestsCases extends DriverSetupPage {
 
 	}
 
-	@Test(priority = 3,description = "Verify user navigates to payment options then logout")
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Verify user navigates to payment options then logout")
+	@Story("Test User navigates to payment page")
+	@Test(priority = 3)
 	public void tc_checkOutCart() throws Exception {
 		
 		FlipkartHomePage flipkartHomePage = new FlipkartHomePage(driver);
@@ -80,7 +92,10 @@ public class FlipkartHomePageTestsCases extends DriverSetupPage {
 		
 	}
 	
-	@Test(priority = 4, description = "Remove the added product from cart")
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Remove the added product from cart")
+	@Story("Test User removes the added product from cart")
+	@Test(priority = 4)
 	public void tc_removeItem() throws Exception {
 		FlipkartHomePage flipkartHomePage = new FlipkartHomePage(driver);
 		flipkartHomePage.login(driver);

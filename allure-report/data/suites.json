@@ -1,0 +1,65 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Demo Suite",
+    "children" : [ {
+      "name" : "Chrome Test",
+      "children" : [ {
+        "name" : "com.wipro.telstra.testcases.FlipkartHomePageTestsCases",
+        "children" : [ {
+          "name" : "Verify user successfully logged in",
+          "uid" : "29af7a08e103b3e7",
+          "parentUid" : "a0a7640108a6e1f13f9193ce85d492d6",
+          "status" : "passed",
+          "time" : {
+            "start" : 1566199645472,
+            "stop" : 1566199647642,
+            "duration" : 2170
+          },
+          "flaky" : false,
+          "parameters" : [ "chrome" ]
+        }, {
+          "name" : "Verify user selects camera and  add to cart",
+          "uid" : "322bb02ab7037e0f",
+          "parentUid" : "a0a7640108a6e1f13f9193ce85d492d6",
+          "status" : "passed",
+          "time" : {
+            "start" : 1566199651913,
+            "stop" : 1566199658883,
+            "duration" : 6970
+          },
+          "flaky" : false,
+          "parameters" : [ "chrome" ]
+        }, {
+          "name" : "Verify user navigates to payment options then logout",
+          "uid" : "c57d222bd43e9fe",
+          "parentUid" : "a0a7640108a6e1f13f9193ce85d492d6",
+          "status" : "passed",
+          "time" : {
+            "start" : 1566199662772,
+            "stop" : 1566199667717,
+            "duration" : 4945
+          },
+          "flaky" : false,
+          "parameters" : [ "chrome" ]
+        }, {
+          "name" : "Remove the added product from cart",
+          "uid" : "36c0a9fe26c3251e",
+          "parentUid" : "a0a7640108a6e1f13f9193ce85d492d6",
+          "status" : "passed",
+          "time" : {
+            "start" : 1566199671549,
+            "stop" : 1566199675520,
+            "duration" : 3971
+          },
+          "flaky" : false,
+          "parameters" : [ "chrome" ]
+        } ],
+        "uid" : "a0a7640108a6e1f13f9193ce85d492d6"
+      } ],
+      "uid" : "ee0ecf62fdcdd6764d9319c2e2cdd848"
+    } ],
+    "uid" : "2cdc36bd1f155f4a616805ae9b58c244"
+  } ]
+}

@@ -1,0 +1,61 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "C02VX0BAG8WN",
+    "children" : [ {
+      "name" : "54009@C02VX0BAG8WN.main(1)",
+      "children" : [ {
+        "name" : "Verify user successfully logged in",
+        "uid" : "29af7a08e103b3e7",
+        "parentUid" : "06dd335a59e6eb66f578aeb96a500e39",
+        "status" : "passed",
+        "time" : {
+          "start" : 1566199645472,
+          "stop" : 1566199647642,
+          "duration" : 2170
+        },
+        "flaky" : false,
+        "parameters" : [ "chrome" ]
+      }, {
+        "name" : "Verify user navigates to payment options then logout",
+        "uid" : "c57d222bd43e9fe",
+        "parentUid" : "06dd335a59e6eb66f578aeb96a500e39",
+        "status" : "passed",
+        "time" : {
+          "start" : 1566199662772,
+          "stop" : 1566199667717,
+          "duration" : 4945
+        },
+        "flaky" : false,
+        "parameters" : [ "chrome" ]
+      }, {
+        "name" : "Remove the added product from cart",
+        "uid" : "36c0a9fe26c3251e",
+        "parentUid" : "06dd335a59e6eb66f578aeb96a500e39",
+        "status" : "passed",
+        "time" : {
+          "start" : 1566199671549,
+          "stop" : 1566199675520,
+          "duration" : 3971
+        },
+        "flaky" : false,
+        "parameters" : [ "chrome" ]
+      }, {
+        "name" : "Verify user selects camera and  add to cart",
+        "uid" : "322bb02ab7037e0f",
+        "parentUid" : "06dd335a59e6eb66f578aeb96a500e39",
+        "status" : "passed",
+        "time" : {
+          "start" : 1566199651913,
+          "stop" : 1566199658883,
+          "duration" : 6970
+        },
+        "flaky" : false,
+        "parameters" : [ "chrome" ]
+      } ],
+      "uid" : "06dd335a59e6eb66f578aeb96a500e39"
+    } ],
+    "uid" : "084efe06e641ba4f6de50ff9b01dcb09"
+  } ]
+}
